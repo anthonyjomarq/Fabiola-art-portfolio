@@ -344,6 +344,9 @@ a:hover {
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
 }
 
 .nav__toggle span {
@@ -1503,7 +1506,7 @@ a:hover {
 @media (max-width: 768px) {
   .nav__menu {
     position: fixed;
-    top: 100%;
+    top: 70px;
     left: 0;
     right: 0;
     background-color: var(--color-neutral-100);
@@ -1514,12 +1517,28 @@ a:hover {
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
+    z-index: 999;
   }
   
   .nav__menu--open {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+  }
+  
+  .nav__menu li {
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+  
+  .nav__menu .nav__link {
+    display: block;
+    padding: var(--space-md);
+    font-size: var(--fs-lg);
+    color: var(--color-neutral-800);
+    background-color: var(--color-neutral-200);
+    border-radius: var(--radius-base);
+    margin: var(--space-sm) 0;
   }
   
   .nav__toggle--open span:nth-child(1) {
@@ -1543,10 +1562,6 @@ a:hover {
    RESPONSIVE DESIGN
    ================================ */
 @media (max-width: 768px) {
-  .nav__menu {
-    display: none;
-  }
-  
   .nav__toggle {
     display: flex;
   }

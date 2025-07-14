@@ -24,8 +24,8 @@
     <meta name="twitter:description" content="Portfolio de arte ambiental y comunitario">
     <meta name="twitter:image" content="images/artist/profile.jpg">
     
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; script-src 'self' unpkg.com; img-src 'self' data:;">
+    <!-- Security Headers (disabled for development) -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com; script-src 'self' unpkg.com; img-src 'self' data:;"> -->
 </head>
 <body>
     <a href="#main-content" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
@@ -116,6 +116,49 @@
         </div>
     </footer>
 
-    <!-- Structured Data -->\n    <script type="application/ld+json">\n    {\n      "@context": "https://schema.org",\n      "@type": "Person",\n      "name": "Fabiola E. Báez Flores",\n      "jobTitle": "Artista Visual",\n      "description": "Artista visual especializada en arte ambiental y comunitario",\n      "email": "Fabiesteisy@gmail.com",\n      "url": "https://your-domain.github.io",\n      "sameAs": [],\n      "knowsAbout": ["Arte Ambiental", "Arte Comunitario", "Bellas Artes", "Humanidades Médicas", "Ecología"],\n      "alumniOf": "Bellas Artes",\n      "workLocation": {\n        "@type": "Place",\n        "name": "Puerto Rico"\n      }\n    }\n    </script>\n    \n    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>\n    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav__toggle');
+            const navMenu = document.querySelector('.nav__menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function(event) {
+                    navMenu.classList.toggle('nav__menu--open');
+                    navToggle.classList.toggle('nav__toggle--open');
+                    document.body.classList.toggle('nav-open');
+                    
+                    // Update ARIA for accessibility
+                    const isOpen = navMenu.classList.contains('nav__menu--open');
+                    navToggle.setAttribute('aria-expanded', isOpen);
+                    navMenu.setAttribute('aria-hidden', !isOpen);
+                    
+                    event.stopPropagation();
+                });
+                
+                // Close menu when clicking on links
+                const navLinks = document.querySelectorAll('.nav__link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('nav__menu--open');
+                        navToggle.classList.remove('nav__toggle--open');
+                        document.body.classList.remove('nav-open');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        navMenu.setAttribute('aria-hidden', 'true');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                        navMenu.classList.remove('nav__menu--open');
+                        navToggle.classList.remove('nav__toggle--open');
+                        document.body.classList.remove('nav-open');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                        navMenu.setAttribute('aria-hidden', 'true');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

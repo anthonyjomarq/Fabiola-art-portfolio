@@ -3,6 +3,8 @@
 // ================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('JavaScript loaded and DOM ready!'); // Debug test
+    
     // Initialize AOS (Animate On Scroll)
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -30,21 +32,35 @@ document.addEventListener('DOMContentLoaded', function() {
 // MOBILE NAVIGATION
 // ================================
 function initMobileNav() {
+    console.log('initMobileNav called'); // Debug
     const navToggle = document.querySelector('.nav__toggle');
     const navMenu = document.querySelector('.nav__menu');
     
-    if (!navToggle || !navMenu) return;
+    console.log('navToggle:', navToggle); // Debug
+    console.log('navMenu:', navMenu); // Debug
     
-    navToggle.addEventListener('click', function() {
+    if (!navToggle || !navMenu) {
+        console.log('Missing elements - navToggle or navMenu not found'); // Debug
+        return;
+    }
+    
+    navToggle.addEventListener('click', function(event) {
+        console.log('Hamburger clicked!'); // Debug
         const isOpen = navMenu.classList.contains('nav__menu--open');
+        console.log('Menu isOpen:', isOpen); // Debug
         
         navMenu.classList.toggle('nav__menu--open');
         navToggle.classList.toggle('nav__toggle--open');
         document.body.classList.toggle('nav-open');
         
+        console.log('Classes after toggle:', navMenu.className); // Debug
+        
         // Update ARIA attributes for accessibility
         navToggle.setAttribute('aria-expanded', !isOpen);
         navMenu.setAttribute('aria-hidden', isOpen);
+        
+        // Prevent event bubbling
+        event.stopPropagation();
     });
     
     // Close menu when clicking on a link
