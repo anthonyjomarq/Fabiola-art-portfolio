@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Fabiola E. Báez Flores</title>
+    <meta name="description" content="Galería completa de obras de Fabiola E. Báez Flores - Arte ambiental, comunitario y abstracto">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__brand">
+                <a href="index.html">
+                    <img src="images/branding/logo.png" alt="Fabiola E. Báez Flores Logo" class="nav__logo">
+                    <h1 class="nav__title">Fabiola E. Báez Flores</h1>
+                </a>
+            </div>
+            <ul class="nav__menu">
+                <li><a href="gallery.html" class="nav__link active">Obras</a></li>
+                <li><a href="about.html" class="nav__link">Sobre Mí</a></li>
+                <li><a href="investigaciones.html" class="nav__link">Investigaciones</a></li>
+                <li><a href="contact.html" class="nav__link">Contacto</a></li>
+            </ul>
+            <div class="nav__toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="gallery-page">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Galería</h1>
+                <p class="page-subtitle">Explora mi colección de obras que fusionan arte, ciencia y compromiso social</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="container">
+            
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <div class="gallery__grid" id="gallery-grid">
+                    <!-- Gallery items will be dynamically loaded -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__overlay"></div>
+        <div class="lightbox__container">
+            <button class="lightbox__close">&times;</button>
+            <button class="lightbox__prev">&#8249;</button>
+            <button class="lightbox__next">&#8250;</button>
+            <div class="lightbox__content">
+                <img class="lightbox__image" src="" alt="">
+                <div class="lightbox__info">
+                    <h3 class="lightbox__title"></h3>
+                    <p class="lightbox__description"></p>
+                    <div class="lightbox__details">
+                        <span class="lightbox__year"></span>
+                        <span class="lightbox__medium"></span>
+                        <span class="lightbox__price"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Fabiola E. Báez Flores</h3>
+                    <p class="footer__text">Artista visual comprometida con el arte ambiental y comunitario</p>
+                </div>
+                <div class="footer__links">
+                    <a href="gallery.html" class="footer__link">Galería</a>
+                    <a href="about.html" class="footer__link">Sobre Mí</a>
+                    <a href="contact.html" class="footer__link">Contacto</a>
+                </div>
+                <div class="footer__contact">
+                    <p class="footer__email">Fabiesteisy@gmail.com</p>
+                    <p class="footer__location">Puerto Rico</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Fabiola E. Báez Flores. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

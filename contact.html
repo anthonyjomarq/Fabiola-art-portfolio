@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Fabiola E. Báez Flores</title>
+    <meta name="description" content="Conecta con Fabiola E. Báez Flores para consultas sobre obras, comisiones y colaboraciones artísticas">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__brand">
+                <a href="index.html">
+                    <img src="images/branding/logo.png" alt="Fabiola E. Báez Flores Logo" class="nav__logo">
+                    <h1 class="nav__title">Fabiola E. Báez Flores</h1>
+                </a>
+            </div>
+            <ul class="nav__menu">
+                <li><a href="gallery.html" class="nav__link">Obras</a></li>
+                <li><a href="about.html" class="nav__link">Sobre Mí</a></li>
+                <li><a href="investigaciones.html" class="nav__link">Investigaciones</a></li>
+                <li><a href="contact.html" class="nav__link active">Contacto</a></li>
+            </ul>
+            <div class="nav__toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Contacto</h1>
+                <p class="page-subtitle">Mi pasión y compromiso se enfocan en la investigación científica creativa, un campo interdisciplinario donde fusiono mis estudios en Bellas Artes con un profundo interés por las Humanidades Médicas, la Ecología y la Ciencia.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h2 class="section__title">Conectemos</h2>
+                        <p class="contact__description">
+                            A lo largo de mi trayectoria, he impulsado proyectos innovadores que buscan ampliar la comprensión de problemáticas sociales, culturales y ecológicas. Creo firmemente en la sinergia entre la ciencia y el arte, y a través de mis investigaciones, me propongo abrir nuevas vías de exploración que no solo enriquezcan a científicos y artistas, sino que también promuevan una comprensión más profunda y diversa de los situaciones que nos rodean.
+                        </p>
+                        
+                        <div class="contact__details">
+                            <div class="contact__item">
+                                <div class="contact__icon contact__icon--email"></div>
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>Fabiesteisy@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <div class="contact__icon contact__icon--social"></div>
+                                <div>
+                                    <h3>Redes Sociales</h3>
+                                    <p>
+                                        <a href="https://www.facebook.com/fabiesteisy/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); margin-right: 1rem;">Facebook</a>
+                                        <a href="https://www.instagram.com/fabiesteisy_art" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">Instagram</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__item">
+                                <div class="contact__icon contact__icon--art"></div>
+                                <div>
+                                    <h3>Especialidades</h3>
+                                    <p>Arte ambiental, comunitario y técnica mixta</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact__cta">
+                            <h3>¿Interesado en una obra específica?</h3>
+                            <p>Todas las piezas mostradas en la galería están disponibles para compra. Los precios se proporcionan mediante consulta directa para asegurar una conversación personalizada sobre cada obra. Las obras se envían por correo con embalaje seguro.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__form-container">
+                        <form class="contact__form" id="contact-form">
+                            <h3 class="form__title">Envíame un mensaje</h3>
+                            
+                            <div class="form__group">
+                                <label for="name" class="form__label">Nombre *</label>
+                                <input type="text" id="name" name="name" class="form__input" required>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="email" class="form__label">Email *</label>
+                                <input type="email" id="email" name="email" class="form__input" required>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="phone" class="form__label">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" class="form__input">
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="interest" class="form__label">Tipo de consulta *</label>
+                                <select id="interest" name="interest" class="form__select" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="purchase">Interés en compra de obra</option>
+                                    <option value="commission">Comisión personalizada</option>
+                                    <option value="collaboration">Colaboración artística</option>
+                                    <option value="exhibition">Oportunidad de exhibición</option>
+                                    <option value="media">Consulta de medios</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="artwork" class="form__label">Obra de interés (si aplica)</label>
+                                <input type="text" id="artwork" name="artwork" class="form__input" placeholder="Nombre o descripción de la obra">
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="message" class="form__label">Mensaje *</label>
+                                <textarea id="message" name="message" class="form__textarea" rows="5" required placeholder="Cuéntame más sobre tu interés..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary form__submit">Enviar Mensaje</button>
+                            
+                            <div class="form__note">
+                                <p><small>* Campos requeridos. Te responderé dentro de 48 horas.</small></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shipping-info">
+            <div class="container">
+                <div class="shipping__content">
+                    <h2 class="section__title">Proceso de Compra</h2>
+                    <div class="visit__grid">
+                        <div class="visit__item">
+                            <h3>Consulta Personalizada</h3>
+                            <p>Cada obra tiene una historia única. Te proporciono información detallada sobre la pieza, incluyendo técnica, inspiración y cuidados necesarios.</p>
+                        </div>
+                        
+                        <div class="visit__item">
+                            <h3>Envío Seguro</h3>
+                            <p>Las obras se embalan cuidadosamente con materiales profesionales para garantizar que lleguen en perfectas condiciones a su destino.</p>
+                        </div>
+                        
+                        <div class="visit__item">
+                            <h3>Soporte Continuo</h3>
+                            <p>Incluyo asesoramiento sobre instalación, cuidado de la obra y certificado de autenticidad con cada compra.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">Fabiola E. Báez Flores</h3>
+                    <p class="footer__text">Artista visual comprometida con el arte ambiental y comunitario</p>
+                </div>
+                <div class="footer__links">
+                    <a href="gallery.html" class="footer__link">Galería</a>
+                    <a href="about.html" class="footer__link">Sobre Mí</a>
+                    <a href="investigaciones.html" class="footer__link">Investigaciones</a>
+                    <a href="contact.html" class="footer__link">Contacto</a>
+                </div>
+                <div class="footer__contact">
+                    <p class="footer__email">Fabiesteisy@gmail.com</p>
+                    <p class="footer__location">Puerto Rico</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Fabiola E. Báez Flores. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Optimize images (if ImageMagick available)
+      run: |
+        if command -v convert &> /dev/null; then
+          echo "Optimizing images..."
+          find images -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" | while read img; do
+            convert "$img" -quality 85 -strip "$img"
+          done
+        else
+          echo "ImageMagick not available, skipping image optimization"
+        fi
+        
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./
+        exclude_assets: '.github,organize-images.sh,README.md'

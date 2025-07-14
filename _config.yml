@@ -1,0 +1,86 @@
+# GitHub Pages Configuration for Fabiola D.V. Art Portfolio
+
+# Site settings
+title: "Fabiola D.V. - Artista Visual"
+description: "Portfolio de Fabiola D.V., artista visual especializada en arte ambiental y comunitario de Puerto Rico"
+author: "Fabiola D.V."
+email: "fabioladv.arte@email.com"
+url: "https://username.github.io"  # Replace with actual GitHub Pages URL
+baseurl: "/fabiola-art-portfolio"   # Replace with actual repository name
+
+# Language and locale
+lang: es
+locale: es_PR
+
+# Social media (optional - update with actual links)
+social:
+  email: "fabioladv.arte@email.com"
+  instagram: "fabioladv_arte"  # Optional
+  facebook: "fabioladv.arte"   # Optional
+
+# SEO settings
+google_analytics: "" # Add Google Analytics ID if needed
+google_site_verification: "" # Add Google Search Console verification
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - README.md
+  - organize-images.sh
+  - .github/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+
+# Include files
+include:
+  - _pages
+
+# Collections (if using Jekyll for blog posts later)
+collections:
+  artworks:
+    output: false
+    
+# Default layouts (for Jekyll)
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      
+# Theme (using minima as base - can be customized)
+# theme: minima
+
+# Custom variables for the site
+portfolio:
+  artist_name: "Fabiola D.V."
+  tagline: "Arte que Conecta Naturaleza y Comunidad"
+  location: "Puerto Rico"
+  categories:
+    - name: "Ambiental"
+      slug: "environmental"
+      description: "Obras inspiradas en la naturaleza y conservación"
+    - name: "Comunitario"
+      slug: "community"
+      description: "Trabajos que surgen del diálogo con la comunidad"
+    - name: "Retratos"
+      slug: "portrait"
+      description: "Representaciones de personas y figuras"
+    - name: "Abstracto"
+      slug: "abstract"
+      description: "Composiciones abstractas y experimentales"
+    - name: "Técnica Mixta"
+      slug: "mixed_media"
+      description: "Obras que combinan múltiples medios"
