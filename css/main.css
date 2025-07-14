@@ -138,6 +138,24 @@ select {
   border: 0;
 }
 
+.sr-only-focusable:focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: var(--space-sm) var(--space-md);
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background-color: var(--color-primary);
+  color: var(--color-neutral-100);
+  text-decoration: none;
+  border-radius: var(--radius-base);
+  z-index: 9999;
+}
+
 /* ================================
    TYPOGRAPHY
    ================================ */

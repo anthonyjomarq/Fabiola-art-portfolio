@@ -5,8 +5,8 @@ title: "Fabiola D.V. - Artista Visual"
 description: "Portfolio de Fabiola D.V., artista visual especializada en arte ambiental y comunitario de Puerto Rico"
 author: "Fabiola D.V."
 email: "fabioladv.arte@email.com"
-url: "https://username.github.io"  # Replace with actual GitHub Pages URL
-baseurl: "/fabiola-art-portfolio"   # Replace with actual repository name
+url: "https://anthonyjomarq.github.io" 
+baseurl: "/fabiola-art-portfolio"   # Base URL for GitHub Pages
 
 # Language and locale
 lang: es

@@ -36,9 +36,15 @@ function initMobileNav() {
     if (!navToggle || !navMenu) return;
     
     navToggle.addEventListener('click', function() {
+        const isOpen = navMenu.classList.contains('nav__menu--open');
+        
         navMenu.classList.toggle('nav__menu--open');
         navToggle.classList.toggle('nav__toggle--open');
         document.body.classList.toggle('nav-open');
+        
+        // Update ARIA attributes for accessibility
+        navToggle.setAttribute('aria-expanded', !isOpen);
+        navMenu.setAttribute('aria-hidden', isOpen);
     });
     
     // Close menu when clicking on a link
