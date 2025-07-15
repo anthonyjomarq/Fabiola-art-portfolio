@@ -1160,14 +1160,29 @@ button {
     text-align: center;
   }
   
+  .featured {
+    padding: 0;
+    margin: 0;
+  }
+  
   .featured__grid {
     grid-template-columns: 1fr;
     height: auto;
     min-height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .featured .artwork-card {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   .featured .artwork-card__image {
     height: 300px;
+    width: 100%;
   }
   
   .investigation__gallery .gallery__grid {
@@ -1274,6 +1289,105 @@ button {
 /* Override AOS animations for featured section */
 .featured [data-aos] {
   opacity: 1 !important;
+}
+
+/* Investigation Gallery Images - Clickable */
+.investigation__gallery {
+  position: relative;
+}
+
+.investigation__gallery img {
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border-radius: var(--border-radius);
+  background: var(--color-neutral-100);
+  min-height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.investigation__gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Image Loading States */
+.investigation__gallery .gallery__grid {
+  position: relative;
+}
+
+.investigation__gallery .gallery__grid > div {
+  position: relative;
+  background: var(--color-neutral-100);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background: var(--color-neutral-100);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container.loading {
+  background: linear-gradient(90deg, var(--color-neutral-100) 0%, var(--color-neutral-200) 50%, var(--color-neutral-100) 100%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+.image-container.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-neutral-300);
+  border-top: 3px solid var(--color-accent);
+  border-radius: 50%;
+  animation: loading-spinner 1s linear infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes loading-spinner {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-container img.loaded {
+  opacity: 1;
 }
 
 /* ================================
@@ -2044,5 +2158,96 @@ button {
   
   .grid--2 {
     gap: var(--space-8);
+  }
+}
+
+/* ================================
+   IMAGE LOADING STATES
+   ================================ */
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-neutral-100);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.image-container.loading {
+  background: linear-gradient(90deg, 
+    var(--color-neutral-100) 0%, 
+    var(--color-neutral-200) 50%, 
+    var(--color-neutral-100) 100%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+.image-container.loading img {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.image-container img:not([src]) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.image-container img[alt] {
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.image-container.loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-neutral-300);
+  border-top: 2px solid var(--color-accent);
+  border-radius: 50%;
+  animation: loading-spin 1s linear infinite;
+  z-index: 1;
+}
+
+.image-container.error {
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-500);
+}
+
+.image-container.error::before {
+  content: '⚠';
+  font-size: var(--fs-xl);
+  animation: none;
+  border: none;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
